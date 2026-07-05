@@ -1,0 +1,17 @@
+name: Scheduled Site Rebuild
+
+on:
+  schedule:
+    - cron: '0 0 1 1 *' # Runs exactly at midnight on January 1st
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitHub Pages Build
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://github.com{{ github.repository }}/pages/builds
+
