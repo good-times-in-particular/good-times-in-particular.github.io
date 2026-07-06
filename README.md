@@ -21,10 +21,16 @@ All other directories and files are modified from MIT Licensed.
 $ gem install jekyll
 ```
 
-### 2. Run Jekyll Locally
+### 2. Install dependencies
 
 ```bash
-$ jekyll serve
+$ bundle install
+```
+
+### 3. Run Jekyll locally through bundler
+
+```bash
+$ bundle exec jekyll serve
 ```
 
 Open <http://localhost:4000> in your browser, and voilà.
